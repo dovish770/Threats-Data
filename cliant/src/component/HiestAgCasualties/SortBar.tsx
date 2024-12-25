@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import SelectType from './SelectType';
 import SelectRange from './SelectRange';
 import SortButton from './SortButton';

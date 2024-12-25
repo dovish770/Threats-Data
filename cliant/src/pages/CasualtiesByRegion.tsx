@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import  { useEffect, useState, useRef } from 'react';
 import SortBar from '../component/HiestAgCasualties/SortBar';
 import { useThreatsContext } from '../service/context';
 import MapComponent from '../component/Map';

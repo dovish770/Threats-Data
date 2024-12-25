@@ -1,4 +1,3 @@
-import React from 'react';
 import { LoadingButton } from '@mui/lab';
 import { Stack } from '@mui/material';
 import { useThreatsContext } from '../../service/context';

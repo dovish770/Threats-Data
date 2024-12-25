@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import SortBar from '../component/incidentTrends/SortBar'
 import Graph from '../component/incidentTrends/Graph'
 import { useThreatsContext } from '../service/context';

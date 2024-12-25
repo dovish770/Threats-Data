@@ -4,7 +4,7 @@ import { useThreatsContext } from '../../service/context';
 import { Box, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 
 const SortBar = () => {
-    const { fetchIncidentsTrends, setError } = useThreatsContext();
+    const { fetchIncidentsTrends } = useThreatsContext();
     const [range, setRange] = useState<number>(1);
     const [startYear, setStartYear] = useState<number>(1970);
     const [endYear, setEndYear] = useState<number>(1971);

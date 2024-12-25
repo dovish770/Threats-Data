@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useThreatsContext } from '../../service/context';
 import { Box, Button } from '@mui/material';
 import SelectYear from './SelectYear';

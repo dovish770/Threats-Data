@@ -1,5 +1,5 @@
 import { PieChart } from '@mui/x-charts/PieChart';
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useThreatsContext } from "../service/context";
 import Loading from '../component/Loading';
 import { Box } from '@mui/material';
