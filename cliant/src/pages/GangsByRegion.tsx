@@ -9,20 +9,45 @@ const GangsByRegion = () => {
   return (
     <>
       <Box
-        sx={{ display: 'flex', flexDirection: 'column', gap: 5, padding: 0, margin: 0 }}
-      >
-        <Box
-          sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%', gap: 2, padding: 0, margin: 0 }}
-        >
-          <SortBar />
-          <Map />
-        </Box>
-        <Box
-          sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%', gap: 2, padding: 0, margin: 0 }}
-        >
-          <GangsTable data={gangsByRegion} />
-        </Box>
-      </Box>
+  sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 5,
+    padding: 0,
+    margin: 0,
+  }}
+>
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: { xs: 'column', sm: 'row' }, 
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      width: '100%',
+      gap: 2,
+      padding: 0,
+      margin: 0,
+    }}
+  >
+    <SortBar />
+    <Map />
+  </Box>
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: { xs: 'column', sm: 'row' }, 
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      width: '100%',
+      gap: 2,
+      padding: 0,
+      margin: 0,
+    }}
+  >
+    <GangsTable data={gangsByRegion} />
+  </Box>
+</Box>
+
     </>
   );
 }

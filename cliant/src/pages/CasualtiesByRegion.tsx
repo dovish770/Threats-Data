@@ -1,8 +1,9 @@
-import  { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SortBar from '../component/HiestAgCasualties/SortBar';
 import { useThreatsContext } from '../service/context';
 import MapComponent from '../component/Map';
 import { Markers } from '../types/serviceTypes';
+import { Box } from '@mui/material';
 
 const CasualtiesByRegion = () => {
   const { highestAvgCasualtiesRegion } = useThreatsContext();
@@ -40,10 +41,16 @@ const CasualtiesByRegion = () => {
   }, [center]);
 
   return (
-    <div>
+
+  <div>
+    <Box sx={{ marginBottom: 2 }}>
       <SortBar />
+    </Box>
+    <Box sx={{ width: '100%' }}>
       <MapComponent markers={markers} center={center} mapRef={mapRef} />
-    </div>
+    </Box>
+  </div>
+
   );
 };
 
