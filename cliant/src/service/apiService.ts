@@ -1,9 +1,9 @@
 import axios from "../service/axiosConfig";
 import { gangsByRegion, HighestCasualties, IncidentsByYearOrGang, incidentsTrends, MostDeadliest } from "../types/serverTypes";
-
+const URL = import.meta.env.SERVER_URL
 export const fetchMostDeadliestService = async (): Promise<MostDeadliest[]> => {
   try {
-    const response: any = await axios.get("http://localhost:7770/api/analysis/deadliest-attack-types");
+    const response: any = await axios.get(URL+"/api/analysis/deadliest-attack-types");
     return response.data;
   } catch (error: any) {
     throw new Error(error.response?.data?.message || error.message);
@@ -12,7 +12,7 @@ export const fetchMostDeadliestService = async (): Promise<MostDeadliest[]> => {
 
 export const fetchHighestAvgCasualtiesService = async (region: string, isAllRegion: string): Promise<HighestCasualties[]> => {
   try {
-    const response = await fetch(`http://localhost:7770/api/analysis/highest-casualty-regions?region=${region}&isAllRegion=${isAllRegion}`);
+    const response = await fetch(URL+`/api/analysis/highest-casualty-regions?region=${region}&isAllRegion=${isAllRegion}`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch data");
@@ -48,7 +48,7 @@ export const fetchHighestAvgCasualtiesService = async (region: string, isAllRegi
 
 export const fetchIncidentsTrendsService = async (startYear: string, endYear: string): Promise<incidentsTrends[]> => {
   try {
-    const response = await fetch(`http://localhost:7770/api/analysis/incident-trends?startYear=${startYear}&endYear=${endYear}`);
+    const response = await fetch(URL+`/api/analysis/incident-trends?startYear=${startYear}&endYear=${endYear}`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch data");
@@ -73,7 +73,7 @@ export const fetchIncidentsTrendsService = async (startYear: string, endYear: st
 
 export const fetchGangsByRegionService = async (region: string, top: string): Promise<gangsByRegion[]> => {
   try {
-    const response = await fetch(`http://localhost:7770/api/relationships/top-groups?region=${encodeURIComponent(region)}&top=${top}`);
+    const response = await fetch(URL+`/api/relationships/top-groups?region=${encodeURIComponent(region)}&top=${top}`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch data");
@@ -96,7 +96,7 @@ export const fetchGangsByRegionService = async (region: string, top: string): Pr
 
 export const fetchListOfTypeService = async (type: string): Promise<string[]> => {
   try {
-    const response = await fetch(`http://localhost:7770/api/list-of-types/?type=${type}`);
+    const response = await fetch(URL+`/api/list-of-types/?type=${type}`);
     
     if (!response.ok) {
       throw new Error("Failed to fetch data");
@@ -119,7 +119,7 @@ export const fetchListOfTypeService = async (type: string): Promise<string[]> =>
 export const fetchGroupByYearOrGangService = async (year?: string, gang?: string):  Promise<IncidentsByYearOrGang[]> => {
 
   try {
-    let url = 'http://localhost:7770/api/relationships/groups-by-year?';
+    let url = URL+'/api/relationships/groups-by-year?';
     if (year) {
       url += `year=${year}`;
     } else if (gang) {
