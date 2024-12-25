@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 const corsOptions ={
-  origin:'https://threats.netlify.app/', 
+  origin:'https://threats.netlify.app', 
   credentials:true, 
   optionSuccessStatus:200
 }
